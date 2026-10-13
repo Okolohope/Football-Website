@@ -5,23 +5,23 @@ function About(){
     <section id="about" className="bg-white px-6 py-24">
       <div className="grid md:grid-cols-2 gap-12">
         <div>
-          <p className="font-semibold text-green-600 ">ABOUT PROPITCH</p>
-          <h2 className="text-4xl font-bold">About ProPitch</h2>
+          <p className=" text-green-600 md:font-semibold">ABOUT PROPITCH</p>
+          <h2 className="text-2xl font-bold md:text-4xl ">About ProPitch</h2>
           <h3>ProPitch is a football platform built to connect<br/> players,teams, and football opportunities.<br/>
       
-          Players can build their profiles and showcase<br/> their abilities, while teams can manage their squads<br/> and discover talent </h3>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="rounded-xl bg-green-200 p-8">
-              <h3>More Visibity</h3>
+          Players can build their profiles and showcase their abilities, while teams can manage their squads and discover talent </h3>
+          <div className="grid grid-cols-3 gap-2 sm:gap-4">
+            <div className="rounded-xl bg-green-200 p-2 sm:p-6 text-center min-w-0">
+              <h3 className="text-xs sm:text-base font-semibold break-words">More Visibity</h3>
             </div>
-            <div className="rounded-xl bg-green-200 p-8">
-              <h3>Better Opportunities</h3>
+            <div className="rounded-xl bg-green-200 p-2 sm:p-6 text-center min-w-0">
+              <h3 className="text-xs sm:text-base font-semibold break-words">Better Opportunities</h3>
             </div>
-            <div className="rounded-xl bg-green-200 p-8">
-              <h3>Stronger Communities</h3>
+            <div className="rounded-xl bg-green-200 p-2 sm:p-6 text-center min-w-0">
+              <h3 className="text-xs sm:text-base font-semibold break-words">Stronger Communities</h3>
             </div>
           </div>
-        </div>
+        </div>   
 
         
         
