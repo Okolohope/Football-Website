@@ -51,7 +51,7 @@ function Home() {
             }} className="rounded-lg px-4 py-3 font-medium transition hover:bg-green-50 hover:text-green-700">Home</Link>
             <a href="#about" onClick={closeMenu} className="rounded-lg px-4 py-3 font-medium transition hover:bg-green-50 hover:text-green-700">About</a>
             <a href="#features" onClick={closeMenu} className="rounded-lg px-4 py-3 font-medium transition hover:bg-green-50 hover:text-green-700">Features</a>
-            <Link to="/login" onClick={closeMenu} className="mt-2 rounded-lg bg-green-600 px-4 py-3 text-center font-semibold text-white transition hover:bg-green-700">Login</Link>
+            <Link to="/coach/register" onClick={closeMenu} className="mt-2 rounded-lg bg-green-600 px-4 py-3 text-center font-semibold text-white transition hover:bg-green-700">Login</Link>
           </div>
         )}
        
@@ -69,7 +69,7 @@ function Home() {
           Connect players, teams, and <span className="text-green-600">opportunites in one platform</span>
         </p>
         <div className="mt-8 flex gap-4">
-          <Link to="/player/register" className="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-700 hover:scale-105">Join as Player</Link>
+          <Link to="/coach/register" className="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-700 hover:scale-105">Join as Player</Link>
           <Link to="/coach/register " className="rounded-lg border border-green-600 px-6 py-3 font-semibold text-green-600 transition hover:bg-black-700 hover:scale-105">Create a Team</Link>
         </div>
       </section>
