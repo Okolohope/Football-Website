@@ -1,5 +1,7 @@
 import { useState } from "react"
 import herofootball from "../assets/football-hero.png"
+import coach from "../assets/coach-icon.png"
+import player from "../assets/player-icon.png"
 function CoachRegister(){
   const [mode, setMode] = useState("signin")
   const [userType, setUserType] = useState("coach");
@@ -54,14 +56,14 @@ function CoachRegister(){
         }`}
           >
           <div>
-
+            <img src={coach} alt="Coach" className="mx-auto h-16 w-16 object-contain" />
           </div>
           <h3 className="text-base font-semibold text-gray-800">Coach</h3>
           <p className="mt-1 text-xs text-gray-500">Manage your team </p>
         </button>
         <button onClick={() => setUserType("player")} className={`flex-1 min-w-0 rounded-2xl border-2 p-4 text-center ${userType === "player"?"border-gray-400 bg-gray-200": "border-gray-200 bg-white"}`}>
           <div>
-
+            <img src={player} alt="Player" className="mx-auto h-16 w-16 object-contain" />
           </div>
           <h3 className="text-base font-semibold text-gray-800">Player</h3>
           <p className="mt-1 text-xs text-gray-500">Track your stats</p>
