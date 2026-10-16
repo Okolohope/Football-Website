@@ -29,7 +29,7 @@ function Home() {
           <a href="#about" className="transiton hover:scale-145">About</a>
 
           <a href="#features" className="transiton hover:scale-145">Features</a>
-          <Link to="/login" className="rounded-lg bg-green-600 px-5 py-2 font-semibold text-white transition hover:bg-green-700 hover:scale-105">Login</Link>
+          <Link to="/coach/register" className="rounded-lg bg-green-600 px-5 py-2 font-semibold text-white transition hover:bg-green-700 hover:scale-105">Login</Link>
         </div>
         {/* Mobile Navigation Menu */}
         {(menuOpen  || menuClosing) &&(
