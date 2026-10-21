@@ -1,5 +1,7 @@
 import { useState } from "react";
 import herofootball from "../assets/football-hero.png";
+import coach from "../assets/coach-icon.png";
+import player from "../assets/player-icon.png";
 
 function CoachRegister() {
   const [mode, setMode] = useState("signin");
@@ -33,7 +35,6 @@ function CoachRegister() {
       {/* RIGHT SIDE: REGISTRATION FORM */}
       <div className="flex w-full min-w-0 flex-col justify-center px-4 pb-6 sm:px-6 md:min-h-screen md:w-1/2 md:px-10 md:py-10">
         <div className="mx-auto w-full max-w-xl rounded-3xl bg-white p-4 shadow-xl sm:p-6 md:p-8">
-
           {/* SIGN IN / SIGN UP TABS */}
           <div className="flex w-full gap-2 rounded-full border border-gray-300 bg-gray-100 p-1">
             <button
@@ -73,15 +74,17 @@ function CoachRegister() {
                   : "border-gray-200 bg-white"
               }`}
             >
-              <div className="mb-2 text-3xl">👨‍💼</div>
+              <div>
+                <img
+                  src={coach}
+                  alt="Coach"
+                  className="mx-auto h-16 w-16 object-contain"
+                />
+              </div>
 
-              <h3 className="text-base font-semibold text-gray-800">
-                Coach
-              </h3>
+              <h3 className="text-base font-semibold text-gray-800">Coach</h3>
 
-              <p className="mt-1 text-xs text-gray-500">
-                Manage your team
-              </p>
+              <p className="mt-1 text-xs text-gray-500">Manage your team</p>
             </button>
 
             <button
@@ -94,15 +97,17 @@ function CoachRegister() {
                   : "border-gray-200 bg-white"
               }`}
             >
-              <div className="mb-2 text-3xl">⚽</div>
+              <div>
+                <img
+                  src={player}
+                  alt="Player"
+                  className="mx-auto h-16 w-16 object-contain"
+                />
+              </div>
 
-              <h3 className="text-base font-semibold text-gray-800">
-                Player
-              </h3>
+              <h3 className="text-base font-semibold text-gray-800">Player</h3>
 
-              <p className="mt-1 text-xs text-gray-500">
-                Track your stats
-              </p>
+              <p className="mt-1 text-xs text-gray-500">Track your stats</p>
             </button>
           </div>
 
@@ -232,7 +237,6 @@ function CoachRegister() {
               </p>
             )}
           </div>
-
         </div>
       </div>
     </div>
