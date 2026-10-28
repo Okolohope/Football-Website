@@ -6,6 +6,8 @@ import CoachRegister from "./pages/CoachRegister";
 import PlayerDashboard from "./pages/PlayerDashboard";
 import { AuthenticateWithRedirectCallback } from "@clerk/clerk-react";
 import RequireAuth from "./components/RequireAuth";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App(){
   return(
@@ -15,6 +17,8 @@ function App(){
 
       <Route path="/"element={<Home/>}/>
       <Route path="/account" element={<CoachRegister/>}/>
+      <Route path="/terms" element={<TermsOfService/>}/>
+      <Route path="/privacy" element={<PrivacyPolicy/>}/>
       <Route path="/coach/create-team" element={<RequireAuth><CreateTeam/></RequireAuth>}/>
       <Route path="/coach" element={<RequireAuth><CoachDashboard/></RequireAuth>}/>
       <Route path="/player" element={<RequireAuth><PlayerDashboard/></RequireAuth>}/>
