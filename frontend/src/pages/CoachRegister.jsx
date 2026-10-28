@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSignIn, useSignUp, useUser } from "@clerk/clerk-react";
 import herofootball from "../assets/football-hero.png";
 import coach from "../assets/coach-icon.png";
@@ -239,7 +239,7 @@ function CoachRegister() {
           </form>}
           {!googleSignupPending && !verificationPending && !signInVerificationPending && <>{mode === "signup" && <div className="mt-3">{showGoogleUsername && <><label htmlFor="googleUsername" className="text-sm font-medium text-gray-700">Username for your Google account</label><input id="googleUsername" value={username} onChange={(event) => setUsername(event.target.value)} className={inputClass} placeholder="Choose a username" required /></>}</div>}<button type="button" onClick={handleGoogle} disabled={!isReady} className="mt-3 flex w-full items-center justify-center gap-2 py-2 text-sm text-gray-700 hover:text-green-700"><img src={googleIcon} alt="" className="h-4 w-4" />Continue with Google</button></>}
           <p className="mt-3 text-center text-sm text-gray-600">{mode === "signin" ? <>Don't have an account? <button type="button" onClick={() => setMode("signup")} className="font-semibold text-green-700 underline">Sign Up</button></> : <>Already have an account? <button type="button" onClick={() => setMode("signin")} className="font-semibold text-green-700 underline">Sign In</button></>}</p>
-          {mode === "signup" && <p className="mt-4 text-center text-xs text-gray-600">By signing up, you agree to our <a href="#terms" className="font-medium text-green-700 underline">Terms of Service</a> and <a href="#privacy" className="font-medium text-green-700 underline">Privacy Policy</a>.</p>}
+          {mode === "signup" && <p className="mt-4 text-center text-xs text-gray-600">By signing up, you agree to our <Link to="/terms" className="font-medium text-green-700 underline">Terms of Service</Link> and <Link to="/privacy" className="font-medium text-green-700 underline">Privacy Policy</Link>.</p>}
         </div>
       </div>
     </div>
