@@ -71,6 +71,8 @@ function Home() {
         <div className="mt-8 flex gap-4">
           <Link to="/account" className="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-700 hover:scale-105">Join as Player</Link>
           <Link to="/account" className="rounded-lg border border-green-600 px-6 py-3 font-semibold text-green-600 transition hover:bg-black-700 hover:scale-105">Create a Team</Link>
+          
+          <Link to="/account" className="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-700 hover:scale-105">Host/view tournament</Link>
         </div>
       </section>
 
@@ -81,7 +83,7 @@ function Home() {
       {/* Call to Action */}
       <section className="bg-green-300 px-4 sm:px-6 md:px-66 py-12 sm:py-16 md:py-24 text-center text-white">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Ready to Take the Next Step?</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base md:text-lg">Join players and teams building their football journey on ProPitch </p>
+        <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base md:text-lg">Join players and teams building their football journey on ELEVN </p>
 
         <div className="mt-6 sm:mt-8 flex flex-row items-center justify-center gap-3 sm:gap-4">
           <Link to="/player/register" className="rounded-lg bg-white px-4 py-2 sm: py-3 text-sm sm:text-base font-semibold text-green-600">Join as Player</Link>
@@ -93,7 +95,7 @@ function Home() {
       <footer className="bg-gray-950 px-6 py-4 sm:px-6 py-8 sm:py-12 text-white">
         <div classNmae="mx-auto max-w-6xl">
          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-           <h2 className="text-2xl font-bold">ProPitch</h2>
+           <h2 className="text-2xl font-bold">ELEVN</h2>
            <p className="mt-2 text-gray-400">Players.Teams.Opportunities</p>
          </div>
          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 w-full md:w-auto">
@@ -106,7 +108,7 @@ function Home() {
         </div>
 
         <div className="mt-8 sm:mt-10 border-t border-gray-800 pt-5 text-center text-xs sm:text-sm text-gray-400">
-             2026 ProPitch
+             2026 ELEVN
         </div>
       </footer>
     </div>
