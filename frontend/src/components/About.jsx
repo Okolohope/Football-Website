@@ -8,11 +8,11 @@ function About(){
     <section id="about" className="bg-white px-6 py-24">
       <div className="grid md:grid-cols-2 gap-12">
         <div>
-          <p className=" text-green-600 md:font-semibold">ABOUT PROPITCH</p>
-          <h2 className="text-2xl font-bold md:text-4xl ">About ProPitch</h2>
-          <h3>ProPitch is a football platform built to connect<br/> players,teams, and football opportunities.<br/>
+          <p className=" text-green-600 md:font-semibold">ABOUT ELEVN</p>
+          <h2 className="text-2xl font-bold md:text-4xl ">About ELEVN</h2>
+          <h3>ELEVN is a sport platform built to connect<br/> players,teams, and football opportunities.<br/>
       
-          Players can build their profiles and showcase their abilities, while teams can manage their squads and discover talent </h3>
+          Players can build their profiles and showcase their abilities, while teams can manage their squads and discover talent,and host tournaments. </h3>
           <div className="grid grid-cols-3 gap-2 sm:gap-4">
             <div className="rounded-xl bg-green-200 p-2 sm:p-6 text-center min-w-0">
               <div>
