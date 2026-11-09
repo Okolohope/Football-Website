@@ -14,7 +14,7 @@ function Feautures(){
           From building your profile to finding your next opportunity,ELEVN gives you the tools to grow.
         </p>
           <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-            <div className="rounded-2xl bg-green-200 p-8">
+            <div className="rounded-2xl bg-green-400 p-8">
 
               <div>
                 <img src={icon4} alt="" className="mx-auto block h-14 w-14 rounded-xl object-contain sm:h-16 sm:w-16 md:h-20 md:w-20" />
@@ -26,7 +26,7 @@ function Feautures(){
               </p>
             </div>
 
-            <div className="rounded-2xl bg-green-200 p-8"> 
+            <div className="rounded-2xl bg-green-400 p-8"> 
               <div>
                 <img src={icon5} alt="" className="mx-auto block h-14 w-14 rounded-xl object-contain sm:h-16 sm:w-16 md:h-20 md:w-20" />
               </div>
@@ -36,7 +36,7 @@ function Feautures(){
               </p>
             </div>
 
-            <div className="rounded-2xl bg-green-200 p-8">
+            <div className="rounded-2xl bg-green-400 p-8">
               <div>
                 <img src={icon6} alt="" className="mx-auto block h-14 w-14 rounded-xl object-contain sm:h-16 sm:w-16 md:h-20 md:w-20" />
               </div>
@@ -45,7 +45,7 @@ function Feautures(){
               <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base md:text-lg text-gray-600">Find players and teams that match your goals and needs</p>
             </div>
 
-            <div className="rounded-2xl bg-green-200 p-8">
+            <div className="rounded-2xl bg-green-400 p-8">
               <div>
                 <img src={icon7} alt="" className="mx-auto block h-14 w-14 rounded-xl object-contain sm:h-16 sm:w-16 md:h-20 md:w-20" />
               </div>
