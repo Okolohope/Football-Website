@@ -79,7 +79,7 @@ function Home() {
       
       <Feautures/>
       {/* Call to Action */}
-      <section className="bg-green-300 px-4 sm:px-6 md:px-66 py-12 sm:py-16 md:py-24 text-center text-white">
+      <section className="bg-green-600 px-4 sm:px-6 md:px-66 py-12 sm:py-16 md:py-24 text-center text-white">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Ready to Take the Next Step?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base md:text-lg">Join players and teams building their football journey on ProPitch </p>
 
