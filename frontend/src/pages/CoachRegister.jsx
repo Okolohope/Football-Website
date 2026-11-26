@@ -5,6 +5,7 @@ import herofootball from "../assets/football-hero.png";
 import coach from "../assets/coach-icon.png";
 import player from "../assets/player-icon.png";
 import googleIcon from "../assets/google.svg";
+import { getCoachDestination } from "../services/coachOnboardingState";
 
 const inputClass = "mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none transition focus:border-green-500 focus:ring-1 focus:ring-green-500";
 
@@ -31,7 +32,10 @@ function CoachRegister() {
   const [error, setError] = useState("");
   const isReady = signInLoaded && signUpLoaded;
   const resetMessage = () => { setError(""); setStatus(""); };
-  const goToRole = (role) => navigate(role === "coach" ? "/coach" : "/player", { replace: true });
+  const goToRole = (role, userId = user?.id) => navigate(
+    role === "coach" ? getCoachDestination(userId) : "/player",
+    { replace: true },
+  );
   const clerkError = (value, fallback) => value.errors?.[0]?.longMessage || fallback;
   const isUsernameTaken = (value) => value.errors?.some((item) => item.code === "form_identifier_exists");
   const toClerkUsername = (role, value) => `${role}_${value.trim().toLowerCase()}`;
@@ -64,7 +68,7 @@ function CoachRegister() {
           sessionStorage.removeItem("elevn_google_username");
           sessionStorage.removeItem("elevn_google_role");
           sessionStorage.removeItem("elevn_google_mode");
-          navigate(role === "coach" ? "/coach" : "/player", { replace: true });
+          navigate(role === "coach" ? getCoachDestination(user.id) : "/player", { replace: true });
         }
       } catch (updateError) {
         setError(clerkError(updateError, "Unable to finish your profile."));
