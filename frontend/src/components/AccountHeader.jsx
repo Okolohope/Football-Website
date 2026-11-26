@@ -11,7 +11,7 @@ function AccountHeader() {
       <button
         type="button"
         onClick={() => {
-          sessionStorage.setItem("propitch_logout_pending", "true");
+          sessionStorage.setItem("elevn_logout_pending", "true");
           signOut({ redirectUrl: "/account" });
         }}
         className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 transition hover:border-red-500 hover:text-red-600"

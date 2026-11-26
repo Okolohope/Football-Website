@@ -18,7 +18,7 @@ function Home() {
     <div style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${herofootball})`}}>
       {/* Navbar */}
       <nav className="relative flex items-center justify-between px-8 py-5">
-        <h2 className="text-2xl font-bold text-white">Pr⚽<span className="text-green-600">Pitch</span></h2>
+        <h2 className="text-2xl font-bold text-white">EL<span className="text-green-600">EVN</span></h2>
         <button onClick={() => {
           setMenuClosing(false);
           setMenuOpen(!menuOpen);
