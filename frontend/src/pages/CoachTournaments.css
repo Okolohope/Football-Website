@@ -1,0 +1,1006 @@
+.coach-tournaments {
+  color: #eef4ef;
+}
+
+.coach-tournaments__header,
+.coach-tournaments__section-heading,
+.coach-tournaments__list-heading,
+.coach-tournaments__details-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.coach-tournaments__breadcrumb,
+.coach-tournaments__eyebrow {
+  margin: 0;
+  color: #8e9b91;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.15em;
+}
+
+.coach-tournaments__header h1 {
+  margin: 12px 0 0;
+  color: #f3f7f4;
+  font-size: clamp(30px, 3.2vw, 40px);
+  font-weight: 720;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+
+.coach-tournaments__intro {
+  max-width: 580px;
+  margin: 10px 0 0;
+  color: #9aa79d;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.coach-tournaments__primary-button,
+.coach-tournaments__secondary-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid #73d394;
+  border-radius: 9px;
+  background: #75d496;
+  color: #142019;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.coach-tournaments__primary-button:hover {
+  background: #8be2a7;
+}
+
+.coach-tournaments button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.coach-tournaments__primary-button > span {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.coach-tournaments__secondary-button {
+  border-color: #3a4b40;
+  background: #202b24;
+  color: #dce5dd;
+}
+
+.coach-tournaments__secondary-button:hover {
+  border-color: #73d394;
+  background: #27352c;
+}
+
+.coach-tournaments__preview-notice,
+.coach-tournaments__success {
+  margin: 22px 0 0;
+  padding: 12px 14px;
+  border: 1px solid rgb(114 214 154 / 19%);
+  border-radius: 10px;
+  background: rgb(114 214 154 / 6%);
+  color: #aab9ae;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.coach-tournaments__preview-notice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.coach-tournaments__preview-notice strong,
+.coach-tournaments__success {
+  color: #b6efc8;
+}
+
+.coach-tournaments__success {
+  border-color: rgb(114 214 154 / 40%);
+}
+
+.coach-tournaments__overview {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.coach-tournaments__overview-card {
+  display: flex;
+  min-width: 0;
+  min-height: 132px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 17px;
+  border: 1px solid #2a352e;
+  border-radius: 12px;
+  background: #1a221d;
+}
+
+.coach-tournaments__overview-card > span {
+  color: #aab4ad;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.coach-tournaments__overview-card > strong {
+  color: #f0f5f1;
+  font-size: 29px;
+  font-weight: 720;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.coach-tournaments__overview-card > small {
+  color: #748078;
+  font-size: 10px;
+}
+
+.coach-tournaments__form,
+.coach-tournaments__review,
+.coach-tournaments__list-panel {
+  margin-top: 18px;
+  padding: 22px;
+  border: 1px solid #2a352e;
+  border-radius: 14px;
+  background: #1a221d;
+}
+
+.coach-tournaments__section-heading h2,
+.coach-tournaments__list-heading h2 {
+  margin: 5px 0 0;
+  color: #edf3ee;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.coach-tournaments__preview-badge {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border: 1px solid #354239;
+  border-radius: 20px;
+  color: #9aa79d;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.coach-tournaments__form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.coach-tournaments__field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+  color: #c4cec6;
+  font-size: 11px;
+  font-weight: 620;
+}
+
+.coach-tournaments__field--wide {
+  grid-column: 1 / -1;
+}
+
+.coach-tournaments__field input:not([type="file"]),
+.coach-tournaments__field select,
+.coach-tournaments__field textarea {
+  width: 100%;
+  min-height: 41px;
+  padding: 10px 11px;
+  border: 1px solid #354239;
+  border-radius: 8px;
+  outline: none;
+  background: #141b16;
+  color: #e6eee8;
+  font: inherit;
+  font-size: 12px;
+}
+
+.coach-tournaments__field textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.coach-tournaments__field input:focus,
+.coach-tournaments__field select:focus,
+.coach-tournaments__field textarea:focus,
+.coach-tournaments__upload:focus-within {
+  border-color: #72d69a;
+  box-shadow: 0 0 0 3px rgb(114 214 154 / 12%);
+}
+
+.coach-tournaments__optional {
+  color: #748078;
+  font-weight: 450;
+}
+
+.coach-tournaments__field-hint {
+  color: #87958b;
+  font-size: 10px;
+  font-weight: 450;
+}
+
+.coach-tournaments__upload {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px dashed #46584b;
+  border-radius: 8px;
+  background: #141b16;
+  color: #a6d9b4;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.coach-tournaments__upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.coach-tournaments__banner-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 9px;
+}
+
+.coach-tournaments__banner-preview img {
+  width: 140px;
+  height: 72px;
+  border: 1px solid #354239;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.coach-tournaments__banner-preview button,
+.coach-tournaments__view-button,
+.coach-tournaments__back-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #91e5ae;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.coach-tournaments__format-picker {
+  min-width: 0;
+  margin: 20px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.coach-tournaments__format-picker legend {
+  margin-bottom: 10px;
+  color: #c4cec6;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.coach-tournaments__format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.coach-tournaments__format-option {
+  position: relative;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.coach-tournaments__format-option input {
+  position: absolute;
+  opacity: 0;
+}
+
+.coach-tournaments__format-card {
+  display: flex;
+  min-height: 104px;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid #354239;
+  border-radius: 10px;
+  background: #141b16;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.coach-tournaments__format-card strong {
+  color: #e5ece6;
+  font-size: 12px;
+}
+
+.coach-tournaments__format-card small {
+  color: #8f9c92;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.coach-tournaments__format-option input:checked + .coach-tournaments__format-card {
+  border-color: #72d69a;
+  background: rgb(114 214 154 / 8%);
+}
+
+.coach-tournaments__format-option input:focus-visible + .coach-tournaments__format-card {
+  outline: 2px solid #72d69a;
+  outline-offset: 3px;
+}
+
+.coach-tournaments__organizer {
+  display: flex;
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 11px;
+  border: 1px solid #354239;
+  border-radius: 8px;
+  background: #141b16;
+}
+
+.coach-tournaments__organizer strong {
+  color: #e6eee8;
+  font-size: 12px;
+}
+
+.coach-tournaments__organizer small {
+  color: #748078;
+  font-size: 10px;
+}
+
+.coach-tournaments__error {
+  margin: 14px 0 0;
+  color: #ffaaaa;
+  font-size: 11px;
+}
+
+.coach-tournaments__request-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 15px;
+  padding: 12px;
+  border: 1px solid rgb(255 170 170 / 28%);
+  border-radius: 9px;
+  background: rgb(255 170 170 / 5%);
+  color: #ffaaaa;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.coach-tournaments__loading {
+  margin: 16px 0 0;
+  color: #aab9ae;
+  font-size: 11px;
+}
+
+.coach-tournaments__form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 17px;
+  border-top: 1px solid #2a342e;
+}
+
+.coach-tournaments__form-actions p {
+  max-width: 420px;
+  margin: 0;
+  color: #87958b;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.coach-tournaments__form-actions > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.coach-tournaments__form[hidden] {
+  display: none;
+}
+
+.coach-tournaments__review-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.coach-tournaments__review-heading h2 {
+  margin: 5px 0 0;
+  color: #edf3ee;
+  font-size: 21px;
+  font-weight: 680;
+  letter-spacing: -0.025em;
+}
+
+.coach-tournaments__review-heading p:last-child {
+  margin: 8px 0 0;
+  color: #9aa79d;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.coach-tournaments__review-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.coach-tournaments__review-section {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid #2a352e;
+  border-radius: 10px;
+  background: #171e19;
+}
+
+.coach-tournaments__review-section--banner {
+  grid-column: 1 / -1;
+}
+
+.coach-tournaments__review-section h3 {
+  margin: 0 0 13px;
+  color: #dce5dd;
+  font-size: 12px;
+  font-weight: 680;
+}
+
+.coach-tournaments__review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.coach-tournaments__review-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.coach-tournaments__review-field > span {
+  color: #849087;
+  font-size: 10px;
+}
+
+.coach-tournaments__review-field > strong {
+  color: #e6eee8;
+  font-size: 12px;
+  font-weight: 580;
+  overflow-wrap: anywhere;
+}
+
+.coach-tournaments__review-field > strong.is-multiline {
+  white-space: pre-wrap;
+}
+
+.coach-tournaments__review-banner {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.coach-tournaments__review-banner img {
+  display: block;
+  width: min(100%, 520px);
+  max-height: 220px;
+  border: 1px solid #354239;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.coach-tournaments__review-banner span,
+.coach-tournaments__review-empty,
+.coach-tournaments__review-note {
+  margin: 0;
+  color: #9aa79d;
+  font-size: 10px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.coach-tournaments__review-note {
+  margin-top: 10px;
+  color: #c4a873;
+}
+
+.coach-tournaments__review-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 17px;
+  border-top: 1px solid #2a342e;
+}
+
+.coach-tournaments__review-actions > p {
+  max-width: 420px;
+  margin: 0;
+  color: #87958b;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.coach-tournaments__review-actions > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.coach-tournaments__list-panel {
+  margin-top: 20px;
+}
+
+.coach-tournaments__status-tabs {
+  display: flex;
+  gap: 7px;
+  margin-top: 17px;
+  overflow-x: auto;
+  border-bottom: 1px solid #2a342e;
+}
+
+.coach-tournaments__status-tabs button {
+  position: relative;
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 0;
+  background: transparent;
+  color: #8f9c92;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 580;
+  white-space: nowrap;
+}
+
+.coach-tournaments__status-tabs button.is-active {
+  color: #91e5ae;
+}
+
+.coach-tournaments__status-tabs button.is-active::after {
+  position: absolute;
+  right: 8px;
+  bottom: -1px;
+  left: 8px;
+  height: 2px;
+  background: #72d69a;
+  content: "";
+}
+
+.coach-tournaments__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 16px;
+}
+
+.coach-tournaments__card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #354239;
+  border-radius: 11px;
+  background: #171e19;
+}
+
+.coach-tournaments__card-banner {
+  position: relative;
+  display: grid;
+  height: 112px;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 70% 20%, rgb(114 214 154 / 22%), transparent 48%),
+    linear-gradient(135deg, #25352a, #141b16 68%);
+  color: rgb(182 239 200 / 45%);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.coach-tournaments__card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coach-tournaments__status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 9px;
+  border: 1px solid #354239;
+  border-radius: 20px;
+  background: #202b24;
+  color: #b6c1b8;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.coach-tournaments__card-banner > .coach-tournaments__status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.coach-tournaments__status.is-upcoming {
+  border-color: rgb(114 214 154 / 35%);
+  color: #91e5ae;
+}
+
+.coach-tournaments__status.is-ongoing {
+  border-color: rgb(240 201 130 / 40%);
+  color: #f0c982;
+}
+
+.coach-tournaments__status.is-completed {
+  color: #aab4ad;
+}
+
+.coach-tournaments__status.is-draft {
+  border-color: rgb(240 201 130 / 40%);
+  color: #f0c982;
+}
+
+.coach-tournaments__status.is-published,
+.coach-tournaments__status.is-in-progress {
+  border-color: rgb(114 214 154 / 35%);
+  color: #91e5ae;
+}
+
+.coach-tournaments__status.is-archived {
+  color: #89968d;
+}
+
+.coach-tournaments__card-body {
+  padding: 15px;
+}
+
+.coach-tournaments__card-body h3 {
+  margin: 0;
+  color: #edf3ee;
+  font-size: 15px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.coach-tournaments__card-location {
+  margin: 5px 0 0;
+  color: #89968d;
+  font-size: 11px;
+}
+
+.coach-tournaments__card-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 10px;
+  margin-top: 14px;
+}
+
+.coach-tournaments__card-meta span {
+  min-width: 0;
+  color: #b1bdb4;
+  font-size: 10px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.coach-tournaments__card-meta span::before {
+  content: "";
+}
+
+.coach-tournaments__view-button {
+  display: flex;
+  width: 100%;
+  min-height: 39px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #2a342e;
+  text-align: left;
+}
+
+.coach-tournaments__card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.coach-tournaments__card-actions > button {
+  flex: 1 1 110px;
+}
+
+.coach-tournaments__empty {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 12px;
+  text-align: center;
+}
+
+.coach-tournaments__empty-mark {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid #34443a;
+  border-radius: 14px;
+  background: #202b24;
+  color: #8ac99b;
+  font-size: 20px;
+}
+
+.coach-tournaments__empty h3 {
+  margin: 13px 0 0;
+  color: #e5ece6;
+  font-size: 14px;
+  font-weight: 620;
+}
+
+.coach-tournaments__empty p {
+  max-width: 440px;
+  margin: 7px 0 0;
+  color: #8f9c92;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.coach-tournaments__empty button {
+  margin-top: 15px;
+}
+
+.coach-tournaments__details {
+  margin-top: 16px;
+  padding: 17px;
+  border: 1px solid #354239;
+  border-radius: 11px;
+  background: #171e19;
+}
+
+.coach-tournaments__back-button {
+  margin-bottom: 16px;
+}
+
+.coach-tournaments__details-banner {
+  width: 100%;
+  max-height: 240px;
+  margin-bottom: 17px;
+  border-radius: 9px;
+  object-fit: cover;
+}
+
+.coach-tournaments__details-heading {
+  align-items: center;
+}
+
+.coach-tournaments__details-heading h3 {
+  margin: 6px 0 0;
+  color: #edf3ee;
+  font-size: 20px;
+  font-weight: 680;
+  overflow-wrap: anywhere;
+}
+
+.coach-tournaments__detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.coach-tournaments__details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.coach-tournaments__detail-item {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid #2a352e;
+  border-radius: 8px;
+  background: #141b16;
+}
+
+.coach-tournaments__detail-item span {
+  color: #849087;
+  font-size: 10px;
+}
+
+.coach-tournaments__detail-item strong {
+  color: #dce5dd;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.coach-tournaments__rules {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #2a342e;
+}
+
+.coach-tournaments__rules h4 {
+  margin: 0;
+  color: #dce5dd;
+  font-size: 12px;
+}
+
+.coach-tournaments__rules p,
+.coach-tournaments__detail-note {
+  margin: 7px 0 0;
+  color: #9aa79d;
+  font-size: 11px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.coach-tournaments__detail-note {
+  margin-top: 16px;
+  color: #91dda8;
+}
+
+.coach-tournaments button:focus-visible,
+.coach-tournaments input:focus-visible,
+.coach-tournaments select:focus-visible,
+.coach-tournaments textarea:focus-visible {
+  outline: 2px solid #72d69a;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1050px) {
+  .coach-tournaments__overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .coach-tournaments__header h1 {
+    font-size: clamp(27px, 7vw, 37px);
+  }
+
+  .coach-tournaments__cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .coach-tournaments__header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .coach-tournaments__header .coach-tournaments__primary-button {
+    align-self: flex-start;
+  }
+
+  .coach-tournaments__overview {
+    gap: 8px;
+  }
+
+  .coach-tournaments__overview-card {
+    min-height: 112px;
+    padding: 13px;
+  }
+
+  .coach-tournaments__overview-card > span {
+    font-size: 10px;
+  }
+
+  .coach-tournaments__form,
+  .coach-tournaments__review,
+  .coach-tournaments__list-panel {
+    padding: 16px;
+  }
+
+  .coach-tournaments__section-heading,
+  .coach-tournaments__list-heading,
+  .coach-tournaments__review-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .coach-tournaments__form-grid,
+  .coach-tournaments__format-grid,
+  .coach-tournaments__review-sections,
+  .coach-tournaments__review-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .coach-tournaments__review-section--banner {
+    grid-column: auto;
+  }
+
+  .coach-tournaments__field--wide {
+    grid-column: auto;
+  }
+
+  .coach-tournaments__format-card {
+    min-height: 82px;
+  }
+
+  .coach-tournaments__form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .coach-tournaments__form-actions > div {
+    justify-content: flex-end;
+  }
+
+  .coach-tournaments__review-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .coach-tournaments__review-actions > div {
+    flex-direction: column;
+  }
+
+  .coach-tournaments__details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .coach-tournaments__request-error {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .coach-tournaments__status-tabs button {
+    padding: 0 9px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coach-tournaments *,
+  .coach-tournaments *::before,
+  .coach-tournaments *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
