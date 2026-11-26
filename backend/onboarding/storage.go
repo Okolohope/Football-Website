@@ -92,6 +92,53 @@ func (storage *objectStorage) avatarURL(ctx context.Context, key string) (string
 	return request.URL, nil
 }
 
+func (storage *objectStorage) uploadPostMedia(ctx context.Context, userID string, file io.Reader, contentType string, mediaType string) (string, error) {
+	suffix := ""
+	limit := int64(100 << 20)
+	switch contentType {
+	case "image/jpeg":
+		suffix = ".jpg"
+	case "image/png":
+		suffix = ".png"
+	case "image/webp":
+		suffix = ".webp"
+	case "video/mp4":
+		suffix = ".mp4"
+	case "video/webm":
+		suffix = ".webm"
+	default:
+		return "", fmt.Errorf("unsupported media type")
+	}
+	randomID := make([]byte, 12)
+	if _, err := rand.Read(randomID); err != nil {
+		return "", fmt.Errorf("create media identifier: %w", err)
+	}
+	key := filepath.ToSlash(filepath.Join("posts", userID, mediaType, hex.EncodeToString(randomID)+suffix))
+	body, err := io.ReadAll(io.LimitReader(file, limit))
+	if err != nil {
+		return "", fmt.Errorf("read media: %w", err)
+	}
+	_, err = storage.client.PutObject(ctx, &s3.PutObjectInput{
+		Bucket: aws.String(storage.bucket), Key: aws.String(key),
+		Body: bytes.NewReader(body), ContentLength: aws.Int64(int64(len(body))), ContentType: aws.String(contentType),
+	})
+	if err != nil {
+		return "", fmt.Errorf("upload media: %w", err)
+	}
+	return key, nil
+}
+
+func (storage *objectStorage) mediaURL(ctx context.Context, key string) (string, error) {
+	presigner := s3.NewPresignClient(storage.client)
+	request, err := presigner.PresignGetObject(ctx, &s3.GetObjectInput{
+		Bucket: aws.String(storage.bucket), Key: aws.String(key),
+	}, s3.WithPresignExpires(15*time.Minute))
+	if err != nil {
+		return "", fmt.Errorf("create media URL: %w", err)
+	}
+	return request.URL, nil
+}
+
 func imageContentType(file io.Reader) (io.Reader, string, error) {
 	header := make([]byte, 512)
 	count, err := file.Read(header)

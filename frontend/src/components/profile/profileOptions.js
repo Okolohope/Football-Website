@@ -1,6 +1,11 @@
 export const initialProfile = {
   fullName: "",
   nickname: "",
+  dateOfBirth: "",
+  phoneNumber: "",
+  guardianName: "",
+  guardianPhone: "",
+  guardianConsent: false,
   ageGroup: "18-21",
   country: "Nigeria",
   city: "",
