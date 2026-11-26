@@ -14,8 +14,8 @@ function CoachRegister() {
   const { isLoaded: signUpLoaded, signUp, setActive: setSignUpActive } = useSignUp();
   const { isLoaded: userLoaded, isSignedIn, user } = useUser();
   const [mode, setMode] = useState("signin");
-  const [userType, setUserType] = useState(() => sessionStorage.getItem("propitch_google_role") || "coach");
-  const [username, setUsername] = useState(() => sessionStorage.getItem("propitch_google_username") || "");
+  const [userType, setUserType] = useState(() => sessionStorage.getItem("elevn_google_role") || "coach");
+  const [username, setUsername] = useState(() => sessionStorage.getItem("elevn_google_username") || "");
   const [identifier, setIdentifier] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,11 +38,11 @@ function CoachRegister() {
 
   useEffect(() => {
     if (!userLoaded || !isSignedIn || !user) return;
-    if (sessionStorage.getItem("propitch_logout_pending") === "true") return;
+    if (sessionStorage.getItem("elevn_logout_pending") === "true") return;
 
-    const pendingUsername = sessionStorage.getItem("propitch_google_username");
-    const pendingRole = sessionStorage.getItem("propitch_google_role");
-    const pendingGoogleMode = sessionStorage.getItem("propitch_google_mode");
+    const pendingUsername = sessionStorage.getItem("elevn_google_username");
+    const pendingRole = sessionStorage.getItem("elevn_google_role");
+    const pendingGoogleMode = sessionStorage.getItem("elevn_google_mode");
     const storedRole = user.unsafeMetadata?.role || user.publicMetadata?.role;
     const selectedRole = pendingRole || userType;
     const role = storedRole || (pendingGoogleMode === "signup" ? pendingRole : null) || signedInRoleFallback || userType;
@@ -60,10 +60,10 @@ function CoachRegister() {
           return;
         }
         if (role) {
-          sessionStorage.removeItem("propitch_logout_pending");
-          sessionStorage.removeItem("propitch_google_username");
-          sessionStorage.removeItem("propitch_google_role");
-          sessionStorage.removeItem("propitch_google_mode");
+          sessionStorage.removeItem("elevn_logout_pending");
+          sessionStorage.removeItem("elevn_google_username");
+          sessionStorage.removeItem("elevn_google_role");
+          sessionStorage.removeItem("elevn_google_mode");
           navigate(role === "coach" ? "/coach" : "/player", { replace: true });
         }
       } catch (updateError) {
@@ -74,7 +74,7 @@ function CoachRegister() {
     finishAuthentication();
   }, [isSignedIn, navigate, signedInRoleFallback, signUp, signUpLoaded, user, userLoaded, userType]);
 
-  const googleSignupPending = signUpLoaded && signUp.status === "missing_requirements" && Boolean(sessionStorage.getItem("propitch_google_username"));
+  const googleSignupPending = signUpLoaded && signUp.status === "missing_requirements" && Boolean(sessionStorage.getItem("elevn_google_username"));
 
   const finishGoogleSignup = async (event) => {
     event.preventDefault();
@@ -85,12 +85,12 @@ function CoachRegister() {
         setError("Choose a username before continuing.");
         return;
       }
-      const pendingRole = sessionStorage.getItem("propitch_google_role") || userType;
+      const pendingRole = sessionStorage.getItem("elevn_google_role") || userType;
       const result = await signUp.update({ username: toClerkUsername(pendingRole, selectedUsername), unsafeMetadata: { role: pendingRole, appUsername: selectedUsername } });
       if (result.status === "complete") {
         await setSignUpActive({ session: result.createdSessionId });
-        sessionStorage.removeItem("propitch_google_username");
-        sessionStorage.removeItem("propitch_google_role");
+        sessionStorage.removeItem("elevn_google_username");
+        sessionStorage.removeItem("elevn_google_role");
         goToRole(pendingRole);
       }
     } catch (googleSignupError) {
@@ -100,7 +100,7 @@ function CoachRegister() {
 
   const handleSignIn = async (event) => {
     event.preventDefault(); resetMessage();
-    sessionStorage.removeItem("propitch_logout_pending");
+    sessionStorage.removeItem("elevn_logout_pending");
     try {
       if (usePasswordSignIn) {
         const signInIdentifier = identifier.includes("@") ? identifier.trim() : toClerkUsername(userType, identifier);
@@ -147,7 +147,7 @@ function CoachRegister() {
       const result = await signIn.attemptFirstFactor({ strategy: "email_code", code: verificationCode });
       if (result.status === "complete") {
         await setSignInActive({ session: result.createdSessionId });
-        sessionStorage.removeItem("propitch_logout_pending");
+        sessionStorage.removeItem("elevn_logout_pending");
         setSignedInRoleFallback(userType);
       }
     } catch (signInError) { setError(clerkError(signInError, "That sign-in code is not valid.")); }
@@ -186,30 +186,30 @@ function CoachRegister() {
 
   const handleGoogle = async () => {
     resetMessage();
-    sessionStorage.removeItem("propitch_logout_pending");
+    sessionStorage.removeItem("elevn_logout_pending");
     if (mode === "signin") {
-      sessionStorage.setItem("propitch_google_role", userType);
-      sessionStorage.setItem("propitch_google_mode", "signin");
+      sessionStorage.setItem("elevn_google_role", userType);
+      sessionStorage.setItem("elevn_google_mode", "signin");
       try {
         await signIn.authenticateWithRedirect({ strategy: "oauth_google", redirectUrl: "/sso-callback", redirectUrlComplete: "/account", oidcPrompt: "select_account" });
       } catch (googleError) {
-        sessionStorage.removeItem("propitch_google_role");
-        sessionStorage.removeItem("propitch_google_mode");
+        sessionStorage.removeItem("elevn_google_role");
+        sessionStorage.removeItem("elevn_google_mode");
         setError(clerkError(googleError, "Unable to continue with Google."));
       }
       return;
     }
     if (!showGoogleUsername) { setShowGoogleUsername(true); return; }
     if (!username.trim()) { setError("Choose a username before continuing with Google."); return; }
-    sessionStorage.setItem("propitch_google_username", username.trim());
-    sessionStorage.setItem("propitch_google_role", userType);
-    sessionStorage.setItem("propitch_google_mode", "signup");
+    sessionStorage.setItem("elevn_google_username", username.trim());
+    sessionStorage.setItem("elevn_google_role", userType);
+    sessionStorage.setItem("elevn_google_mode", "signup");
     try {
       await signUp.authenticateWithRedirect({ strategy: "oauth_google", redirectUrl: "/sso-callback", redirectUrlComplete: "/account", unsafeMetadata: { role: userType } });
     } catch (googleError) {
-      sessionStorage.removeItem("propitch_google_username");
-      sessionStorage.removeItem("propitch_google_role");
-      sessionStorage.removeItem("propitch_google_mode");
+      sessionStorage.removeItem("elevn_google_username");
+      sessionStorage.removeItem("elevn_google_role");
+      sessionStorage.removeItem("elevn_google_mode");
       setError(clerkError(googleError, "Unable to continue with Google."));
     }
   };
@@ -217,7 +217,7 @@ function CoachRegister() {
   return (
     <div className="min-h-screen bg-cover bg-center bg-no-repeat md:flex md:flex-row" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${herofootball})` }}>
       <div className="flex min-h-[38vh] w-full flex-col items-center justify-center px-5 py-8 text-center text-white md:min-h-screen md:w-1/2 md:items-start md:px-10 md:py-10 md:text-left">
-        <div className="mb-7 md:mb-10"><h2 className="text-3xl font-bold"><span className="text-white">Pr⚽</span><span className="text-green-500">Pitch</span></h2></div>
+        <div className="mb-7 md:mb-10"><h2 className="text-3xl font-bold"><span className="text-white">EL</span><span className="text-green-500">EVN</span></h2></div>
         <h1 className="max-w-lg text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">Unleash Your Potential.<br />Join the elite network of players and coaches.</h1>
       </div>
       <div className="flex w-full min-w-0 flex-col justify-center px-4 pb-6 sm:px-6 md:min-h-screen md:w-1/2 md:px-10 md:py-10">
